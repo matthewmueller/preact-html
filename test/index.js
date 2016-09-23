@@ -32,6 +32,12 @@ describe('html', () => {
     let div = css(HTML.div(vnodes))
     assert.equal(r(div), '<div><h3 class="_1nxhvta"><strong>hi there!</strong></h3></div>')
   })
+
+  it('should not trim by default', async () => {
+    let vnodes = html('<p>hi <strong>there</strong></p>')
+    let div = css(HTML.div(vnodes))
+    assert.equal(r(div), '<div><p>hi <strong>there</strong></p></div>')
+  })
 })
 
 function r (vnode) {
