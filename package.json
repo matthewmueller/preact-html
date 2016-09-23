@@ -1,6 +1,6 @@
 {
   "name": "preact-html",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Turn HTML strings into Preact VNodes",
   "keywords": [],
   "author": "Matthew Mueller <mattmuelle@gmail.com>",
