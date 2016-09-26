@@ -1,4 +1,9 @@
 
+1.0.2 / 2016-09-26
+==================
+
+  * dynamic components should also be resolved when the function runs
+
 1.0.1 / 2016-09-23
 ==================
 
