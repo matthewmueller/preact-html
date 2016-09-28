@@ -2,10 +2,16 @@
  * Module Dependencies
  */
 
+const string = require('preact-render-to-string')
 const { CSS, HTML, render } = require('vcom')
 const assert = require('assert')
 const html = require('..')
 
+/**
+ * Browser
+ */
+
+const browser = typeof window !== 'undefined'
 
 /**
  * Tests
@@ -64,7 +70,11 @@ describe('html', () => {
 })
 
 function r (vnode) {
-  document.body.innerHTML = ''
-  render(vnode, document.body)
-  return document.body.innerHTML
+  if (browser) {
+    document.body.innerHTML = ''
+    render(vnode, document.body)
+    return document.body.innerHTML
+  } else {
+    return string(vnode)
+  }
 }
