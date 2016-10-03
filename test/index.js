@@ -67,6 +67,22 @@ describe('html', () => {
     let div = css(HTML.div(vnodes))
     assert.equal(r(div), '<div><h3 class="_1nxhvta"><strong>hi there!</strong></h3></div>')
   })
+
+  it('should hide falsey values', async () => {
+    const css = CSS(`
+      .blue {
+        background: blue;
+      }
+    `)
+
+    let vnodes = html('<h2 class="blue"><strong>hi there!</strong></h2>', {
+      strong (props) {
+        return false
+      }
+    })
+    let div = css(HTML.div(vnodes))
+    assert.equal(r(div), '<div><h2 class="_1nxhvta"></h2></div>')
+  })
 })
 
 function r (vnode) {
