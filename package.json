@@ -1,6 +1,6 @@
 {
   "name": "preact-html",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Turn HTML strings into Preact VNodes",
   "keywords": [],
   "author": "Matthew Mueller <mattmuelle@gmail.com>",
@@ -13,11 +13,14 @@
   },
   "devDependencies": {
     "async-to-gen": "1.1.3",
+    "babel-preset-env": "0.0.9",
+    "browserify": "13.1.1",
     "devtool": "2.2.0",
     "mocha": "3.1.0",
     "nyc": "8.3.0",
     "preact-render-to-string": "3.2.1",
     "should": "*",
+    "uglify": "0.1.5",
     "vcom": "6.0.4"
   },
   "peerDependencies": {
