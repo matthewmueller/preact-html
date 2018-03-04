@@ -4,6 +4,7 @@
 
 const string = require('preact-render-to-string')
 const { CSS, HTML, render } = require('vcom')
+const preact = require('preact')
 const assert = require('assert')
 const html = require('..')
 
@@ -82,6 +83,15 @@ describe('html', () => {
     })
     let div = css(HTML.div(vnodes))
     assert.equal(r(div), '<div><h2 class="_1nxhvta"></h2></div>')
+  })
+
+  it('should support components', () => {
+    let vnodes = html('<h2 class="blue"><Strong>hi there!</Strong></h2>', {
+      Strong (props) {
+        return HTML.em.class('emphasis')(props.children)
+      }
+    }, { type: 'xml' })
+    assert.equal(r(vnodes[0]), '<h2 class="blue"><em class="emphasis">hi there!</em></h2>')
   })
 })
 

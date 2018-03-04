@@ -9,6 +9,7 @@
     "url": "git://github.com/MatthewMueller/preact-html.git"
   },
   "dependencies": {
+    "preact": "^8.2.7",
     "xmldom": "0.1.22"
   },
   "devDependencies": {
